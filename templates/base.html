@@ -23,6 +23,7 @@
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
         >Truly expenses</a
       >
+      {% comment %}
       <button
         class="navbar-toggler position-absolute d-md-none collapsed"
         type="button"
@@ -34,17 +35,33 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+      {% endcomment %} {% comment %}
       <input
         class="form-control form-control-dark w-100"
         type="text"
         placeholder="Search"
         aria-label="Search"
       />
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <a class="nav-link px-3" href="#">Sign out</a>
-        </div>
-      </div>
+      {% endcomment %}
+      <ul
+        class="navbar-nav px-3"
+        style="display: flex; flex-direction: row; align-items: center"
+      >
+        <li class="nav-item text-nowrap">
+          <span class="nav-link" href=""> ({{request.user.username}}) </span>
+        </li>
+
+        <li class="nav-item text-nowrap ml-2 mt-2">
+          <form action="{% url  'logout' %}" method="POST">
+            {% csrf_token %}
+            <input
+              class="text text-capitalize"
+              type="submit"
+              value="Sign out"
+            />
+          </form>
+        </li>
+      </ul>
     </header>
 
     <div class="container-fluid">
@@ -76,6 +93,7 @@
       integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
       crossorigin="anonymous"
     ></script>
+
     <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

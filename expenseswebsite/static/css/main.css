@@ -11,3 +11,16 @@
     font-size: 3.5rem;
   }
 }
+
+.usernameSuccessOutput {
+  margin: 0;
+}
+
+.showPasswordToggle {
+  cursor: pointer;
+  /* transition: all; */
+}
+
+.showPasswordToggle:hover {
+  color: green;
+}

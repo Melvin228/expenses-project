@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 django-heroku = "*"
 gunicorn = "*"
+validate-email = "*"
+six = "*"
+xlwt = "*"
+weasyprint = "*"
 
 [dev-packages]
 django="*"
